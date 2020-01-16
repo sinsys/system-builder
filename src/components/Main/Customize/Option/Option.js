@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import slugify from 'slugify';
 
 class Option extends Component {
 	constructor(props){
@@ -8,10 +9,12 @@ class Option extends Component {
 	};
 
 	render() {
+		const itemHash = slugify(JSON.stringify(this.props.item));
+		console.log(this.props)
 		return (
-			<option className="Option">
-				Option
-			</option>
+			<div>
+				{this.props.feature}
+			</div>
 		)
 	};
 }

@@ -4,7 +4,9 @@ import Customize from './Customize/Customize';
 
 class Main extends Component {
 	constructor(props){
+
 		super(props);
+
 		this.state = {
       selected: {
         Processor: {
@@ -25,48 +27,44 @@ class Main extends Component {
         }
       }
 		};
-		this.updateFeature = (feature, newValue) => {
+
+    this.USCurrencyFormat = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD'
+    });
+
+    this.updateFeature = (feature, newValue) => {
       const selected = Object.assign({}, this.state.selected);
       selected[feature] = newValue;
       this.setState({
         selected
       });
     };
-	};
+
+  };
 
 	render() {
-		console.log(this.props)
+
 		return (
 			<main className="Main">
+
 				<Customize 
 					features = {this.props.features}
 					selected = {this.state.selected}
-					USCurrencyFormat = {this.props.USCurrencyFormat}
+					USCurrencyFormat = {this.USCurrencyFormat}
 					updateFeature = {this.updateFeature}
 				/>
+
 				<Cart 
 					selected = {this.state.selected}
-					USCurrencyFormat = {this.props.USCurrencyFormat}
+					USCurrencyFormat = {this.USCurrencyFormat}
 				/>
+
 			</main>
-		)
+		);
+
 	};
+
 }
+
 export default Main;
-
-
-
-    // const summary = Object.keys(this.state.selected).map((feature, idx) => {
-    //   const featureHash = feature + '-' + idx;
-    //   const selectedOption = this.state.selected[feature];
-
-    //   return (
-    //     <div className="summary__option" key={featureHash}>
-    //       <div className="summary__option__label">{feature} </div>
-    //       <div className="summary__option__value">{selectedOption.name}</div>
-    //       <div className="summary__option__cost">
-    //         {this.props.USCurrencyFormat.format(selectedOption.cost)}
-    //       </div>
-    //     </div>
-    //   );
-    // });
