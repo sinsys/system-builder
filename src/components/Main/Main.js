@@ -46,7 +46,10 @@ class Main extends Component {
 	render() {
 
 		return (
-			<main className="Main">
+
+			<main 
+        className="Main"
+      >
 
 				<Customize 
 					features = {this.props.features}

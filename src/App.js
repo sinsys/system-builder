@@ -12,7 +12,6 @@ class App extends Component {
         <Header />
         <Main 
           features = {this.props.features}
-          USCurrencyFormat = {this.USCurrencyFormat}
         />
       </div>
     );
