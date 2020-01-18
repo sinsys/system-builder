@@ -3,6 +3,7 @@ import Cart from './Cart/Cart';
 import Customize from './Customize/Customize';
 
 class Main extends Component {
+
 	constructor(props){
 
 		super(props);
@@ -44,7 +45,6 @@ class Main extends Component {
   };
 
 	render() {
-
 		return (
 
 			<main 
