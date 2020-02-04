@@ -21,6 +21,10 @@ export default {
     {
       name: 'Bodhi Linux',
       cost: 300
+    },
+    {
+      name: 'Testing New OS',
+      cost: 500
     }
   ],
   "Video Card": [
@@ -31,6 +35,10 @@ export default {
     {
       name: 'Mind mild breeze 2000',
       cost: 1345
+    },
+    {
+      name: 'New Video Card',
+      cost: 11.20
     }
   ],
   Display: [
@@ -41,6 +49,6 @@ export default {
     {
       name: '15.3" HGTV (3840 x 2160) Home makeover edition',
       cost: 1400
-    },
+    }
   ]
 };

@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-import slugify from 'slugify';
 
 class Option extends Component {
-	constructor(props){
-		super(props);
-		this.state = {
-		}
-	};
 
 	render() {
-		const itemHash = slugify(JSON.stringify(this.props.item));
-		console.log(this.props)
 		return (
-			<div>
-				{this.props.feature}
-			</div>
+      <div>
+        <input
+          type="radio"
+          id={this.props.itemHash}
+          className="feature__option"
+          name={this.props.item.name}
+          checked={this.props.checked}
+          onChange={e => this.props.updateFeature(this.props.feature, this.props.item)}
+        />
+        <label htmlFor={this.props.itemHash} className="feature__label">
+          {this.props.item.name} ({this.props.USCurrencyFormat.format(this.props.item.cost)})
+        </label>
+      </div>
 		)
 	};
 }
